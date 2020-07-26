@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet"  href="{%  static 'css/home.css' %}">
+    <title>Resume Builder</title>
+    <style>
+        .container-content{
+    background-color: lightblue;
+    }
+
+body{
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+
+}
+h1{
+font-size: 75px;
+font-family: 'Pacifico';
+background-color: MediumSeaGreen;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+height: 30vh;
+text-align: center;
+}
+
+h2{
+color: rgb(241,169,164);
+}
+
+.sent_message{
+background-color: Violet;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+height: 30vh;
+}
+
+.container-content{
+    color: white;
+    border-radius: 10px;
+    margin : 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: rgb(20,30,90);
+}
+
+.container-main{
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;}
+
+
+label{
+    color: white;
+}
+
+.btn-primary{
+    background-color: DodgerBlue;
+    color: rgb(241,169,164);
+    border: 2px solid rgb(241,169,164);
+    font-size:18px;
+    border-radius: 19px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.btn-primary:hover{
+    background-color: Tomato;
+    color: rgb(20,30,90);
+
+}
+
+
+
+#name{
+width: 50%;
+}
+
+
+
+
+.footer{
+font-color: rgb(20,35,70);
+background-color: SlateBlue;
+align: center;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+}
+
+
+@media screen and (max-width: 1000px)
+{
+    .container-main{
+        max-width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+}
+    </style>
+</head>
+<body>
+<div class="container-main">
+    <div class="container-content">
+        <h1>Resume Builder</h1>
+        <br><br>
+        <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+
+          <div class="form-group">
+              <br><br>
+             <h2>Name</h2><br>
+              <div class="form-row">
+                  <div class="form-group col-lg-6">
+                     <input type="text" name="name" class="form-control" id="name"  placeholder="Your name ">
+                  </div>
+              </div>
+          </div>
+            <br><br>
+          <h2>Contact Info:</h2><br>
+          <div class="form-row">
+              <div class="col">
+                <label for="email">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Your email: example@gmail.com">
+
+              </div>
+
+              <div class="col">
+                <label for="phone">Phone</label>
+                <input type="text" name="number" class="form-control" id="phone" placeholder="Phone No. : 9999888777">
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="col">
+                <label for="address">Address</label>
+                <input type="text" name="address" class="form-control" id="address" placeholder="Address">
+              </div>
+
+              <div class="col">
+                <label for="linkedin">LinkedIn Profile</label>
+                <input type="text" name="linkedin" class="form-control" id="linkedin" placeholder="Enter link to your profile">
+              </div>
+          </div>
+
+          <br><br><h2>About Yourself</h2><br>
+          <div class="form-group">
+              <textarea   name="About" class="form-control" id="About" rows="3" placeholder="About Yourself"></textarea>
+          </div>
+
+          <br><br><h2>Education</h2>
+            {% for count in "1234" %}
+              <br>
+              <div class="form-row">
+                  <div class="col">
+                    <label for="school">School/university</label>
+                    <input type="text" name= "school {{count}}" class="form-control" id="school" placeholder="School/University name">
+                  </div>
+
+                  <div class="col">
+                    <label for="year">Year</label>
+                    <input type="text" name="year {{count}}" class="form-control" id="year" placeholder="Year of passing">
+                  </div>
+                  <div class="col">
+                    <label for="marks">Marks</label>
+                    <input type="text" name="marks {{count}}" class="form-control" id="marks" placeholder="Marks obtained">
+                  </div>
+              </div>
+            {% endfor %}
+
+          <br><br><h2>Skills(Subjects, Programming languages, Frameworks and other)</h2><br>
+            <br><br><h4>Enter each skill with Comma ',' separated</h4><br>
+            <br><br><h4>Rate yourself out of 10 on your skills and include it in parentheses after the 'Skill'(Lowest=1 and Highest=10)</h4><br>
+          <div class="form-group">
+              <textarea  name="skills" class="form-control" id="skills" rows="3" placeholder="Data Structures(8), OS(7),..."></textarea>
+          </div>
+
+          <br><br><h2>Achievements</h2><br>
+          <div class="form-group">
+              <textarea  name="achievements" class="form-control" id="achievements" rows="3" placeholder="Before each description add '*' "></textarea>
+          </div>
+
+          <br><br><h2>Experience/Projects</h2><br>
+          <div class="form-group" id="exp_text">
+              <textarea  name="experience" class="form-control" id="experience" rows="8" placeholder="Use '#' before the Title and '*' before it's description."></textarea>
+          </div>
+
+
+
+          <br><br><button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+
+    <div class="footer">
+        Designed & Developed By :  Rahul Biswas
+        <br><br>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap:200,300,400,500,600,700,900');
+
+.container-content{
+    background-color: lightblue;
+    }
+
+body{
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+
+}
+h1{
+font-size: 75px;
+font-family: 'Pacifico';
+background-color: MediumSeaGreen;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+height: 30vh;
+text-align: center;
+}
+
+h2{
+color: rgb(241,169,164);
+}
+
+.sent_message{
+background-color: Violet;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+height: 30vh;
+}
+
+.container-content{
+    color: white;
+    border-radius: 10px;
+    margin : 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: rgb(20,30,90);
+}
+
+.container-main{
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;}
+
+
+label{
+    color: white;
+}
+
+.btn-primary{
+    background-color: DodgerBlue;
+    color: rgb(241,169,164);
+    border: 2px solid rgb(241,169,164);
+    font-size:18px;
+    border-radius: 19px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.btn-primary:hover{
+    background-color: Tomato;
+    color: rgb(20,30,90);
+
+}
+
+
+
+#name{
+width: 50%;
+}
+
+
+
+
+.footer{
+font-color: rgb(20,35,70);
+background-color: SlateBlue;
+align: center;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+}
+
+
+@media screen and (max-width: 1000px)
+{
+    .container-main{
+        max-width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+}

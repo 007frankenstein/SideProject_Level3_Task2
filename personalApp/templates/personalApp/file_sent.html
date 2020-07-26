@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/css/home.css' %}">
+    <title>Resume Builder </title>
+    <style>
+        .container-content{
+    background-color: lightblue;
+    }
+
+body{
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+
+}
+h1{
+font-size: 75px;
+font-family: 'Pacifico';
+background-color: MediumSeaGreen;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+height: 30vh;
+text-align: center;
+}
+
+h2{
+color: rgb(241,169,164);
+}
+
+.sent_message{
+background-color: Violet;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+height: 30vh;
+}
+
+.container-content{
+    color: white;
+    border-radius: 10px;
+    margin : 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: rgb(20,30,90);
+}
+
+.container-main{
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;}
+
+
+label{
+    color: white;
+}
+
+.btn-primary{
+    background-color: DodgerBlue;
+    color: rgb(241,169,164);
+    border: 2px solid rgb(241,169,164);
+    font-size:18px;
+    border-radius: 19px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.btn-primary:hover{
+    background-color: Tomato;
+    color: rgb(20,30,90);
+
+}
+
+
+
+#name{
+width: 50%;
+}
+
+
+
+
+.footer{
+font-color: rgb(20,35,70);
+background-color: SlateBlue;
+align: center;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+}
+
+
+@media screen and (max-width: 1000px)
+{
+    .container-main{
+        max-width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+}
+    </style>
+</head>
+<body>
+
+<div class="container-main">
+    <div class="container-content">
+        <h1>Resume Builder</h1>
+        <br><br><br><br>
+        <h2> Your Resume has been created successfully. <br>Please check it out !!!</h2>
+        <br><br><br>
+    </div>
+
+    <div class="footer">
+        Designed & Developed By :  Rahul Biswas
+        <br><br>
+    </div>
+</div>
+</body>
+</html>
